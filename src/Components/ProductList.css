@@ -40,6 +40,7 @@
 .navbar-center {
     display: flex;
     justify-content: center;
+    gap: 80px;
 }
 
 .nav-link-main {
@@ -78,6 +79,55 @@
 .navbar-links a:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    border-bottom: 3px solid transparent;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    opacity: 0.9;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-link.active {
+    border-bottom: 3px solid #ffffff;
+    opacity: 1;
+}
+
+.cart-icon-container {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.cart-icon-container:hover {
+    transform: scale(1.1);
+}
+
+.cart-badge-large {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    background: #e74c3c;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 50%;
+    border: 2px solid #2e7d32;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .cart-link {
@@ -302,6 +352,12 @@
 
 .plant-image.scale-small:hover {
     transform: translate(-50%, -50%) scale(1.1);
+}
+
+.add-to-cart-btn.disabled {
+    background: #bdc3c7 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
 }
 
 .plant-card:hover .plant-image.scale-small {

@@ -1,6 +1,6 @@
-# 🌿 Paradise Nursery - Tropical Houseplant Store
+# 🌿 e-plantShopping - Paradise Nursery
 
-Paradise Nursery is a premium, modern e-commerce web application dedicated to providing high-quality tropical houseplants. The app features a stunning landing page with natural animations and an intuitive shopping experience localized for the Sri Lankan market.
+**e-plantShopping** is a premium, modern e-commerce web application dedicated to providing high-quality tropical houseplants under the brand **Paradise Nursery**. The app features a stunning landing page with natural animations and an intuitive shopping experience localized for the Sri Lankan market.
 
 ## ✨ Features
 

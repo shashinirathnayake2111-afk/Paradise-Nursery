@@ -35,6 +35,19 @@ function CartItem({ onContinueShopping }) {
         dispatch(removeItem(item.name));
     };
 
+    const handleCheckout = () => {
+        const btn = document.querySelector('.checkout-btn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "Processing...";
+        btn.disabled = true;
+        
+        setTimeout(() => {
+            alert('Checkout functionality coming soon! Thank you for shopping with Paradise Nursery.');
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }, 2000);
+    };
+
     const calculateTotalCost = (item) => {
         const cost = parsePrice(item.cost);
         return (cost * item.quantity).toLocaleString();
@@ -74,7 +87,7 @@ function CartItem({ onContinueShopping }) {
             </div>
             <div className="cart-actions">
                 <button className="continue-shopping-btn" onClick={onContinueShopping}>Continue Shopping</button>
-                <button className="checkout-btn" onClick={() => alert('Checkout functionality coming soon!')}>Checkout</button>
+                <button className="checkout-btn" onClick={handleCheckout}>Checkout</button>
             </div>
         </div>
     );

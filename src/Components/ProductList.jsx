@@ -34,12 +34,13 @@ function ProductList({ handleBackToHome }) {
                     <span>Paradise Nursery</span>
                 </div>
                 <div className="navbar-center">
-                    <a href="#" onClick={handleContinueShopping} className="nav-link-main">Plants</a>
+                    <a href="#" onClick={handleBackToHome} className="nav-link">Home</a>
+                    <a href="#" onClick={handleContinueShopping} className="nav-link active">Plants</a>
                 </div>
                 <div className="navbar-links">
-                    <a href="#" onClick={handleCartClick} className="cart-link">
-                        <ShoppingCart size={24} />
-                        <span className="cart-badge">{totalItems}</span>
+                    <a href="#" onClick={handleCartClick} className="cart-icon-container">
+                        <ShoppingCart size={28} />
+                        {totalItems > 0 && <span className="cart-badge-large">{totalItems}</span>}
                     </a>
                 </div>
             </nav>
@@ -68,10 +69,11 @@ function ProductList({ handleBackToHome }) {
                                             <p className="plant-description">{plant.description}</p>
                                             <p className="plant-cost">{plant.cost}</p>
                                             <button 
-                                                className="add-to-cart-btn"
+                                                className={`add-to-cart-btn ${cart.some(item => item.name === plant.name) ? 'disabled' : ''}`}
                                                 onClick={() => handleAddToCart(plant)}
+                                                disabled={cart.some(item => item.name === plant.name)}
                                             >
-                                                Add to Cart
+                                                {cart.some(item => item.name === plant.name) ? 'Added' : 'Add to Cart'}
                                             </button>
                                         </div>
                                     </div>
